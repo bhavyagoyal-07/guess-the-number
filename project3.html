@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    background-color: black;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav{
+    width:100%;
+    height:70px;
+
+    background:white;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
+
+    border-bottom:1px solid #ccc;
+}
+
+.nav-btn{
+    padding:10px 25px;
+    font-size:16px;
+
+    border:2px solid #999;
+    background:white;
+
+    border-radius:5px;
+
+    cursor:pointer;
+}
+
+/* Main container */
+.container{
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Heading */
+.container h2{
+    color: white;
+    margin-bottom: 15px;
+}
+
+/* Yellow Box */
+.time-box{
+    width: 160px;
+    height: 60px;
+
+    background-color: #ffc107;
+
+    border-radius: 15px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:22px;
+    font-weight:bold;
+}
+</style>
+<body>
+    <nav>
+        <button class="nav-btn">Home</button>
+        <button class="nav-btn">Youtube channel</button>
+    </nav>
+    <div class="container">
+        <h2>Your local time</h2>
+        <div class="time-box"></div>
+    </div>
+    <script>
+       const clock = document.querySelector('.time-box')
+
+       setInterval(function(){
+        let date = new Date();
+        clock.innerHTML = date.toLocaleTimeString();
+       },1000)
+    </script>
+</body>
+</html>
